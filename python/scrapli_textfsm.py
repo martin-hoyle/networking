@@ -1,18 +1,20 @@
+from unittest import result
+
 from scrapli import Scrapli
 import textfsm
+from tabulate import tabulate
 
-with open("devices.txt", "r") as f:
-   devices = [line.strip() for line in f if line.strip()]
+# with open("devices.txt", "r") as f:
+#    devices = [line.strip() for line in f if line.strip()]
 
-# devices = [
-#     {
-#         "host": "192.168.1.197",
-#         "auth_username": "cisco",
-#         "auth_password": "Cisco123",
-#         "auth_strict_key": False,
-#         "platform": "cisco_iosxe",
-#     }
-# ]
+device = {
+    "host": "192.168.1.197",
+    "auth_username": "cisco",
+    "auth_password": "Cisco123",
+    "auth_strict_key": False,
+    "platform": "cisco_iosxe"
+}
+
 
 
 commands = [
@@ -20,21 +22,22 @@ commands = [
     "show ip int brief"
 ]
 
-for device in devices:
+with Scrapli(**device) as ssh:
+    hostname = ssh.get_prompt().rstrip("#").strip()
+    print(f"Connected to {hostname}\n")
 
-    with Scrapli(**device) as ssh:
-        for cmd in commands:
-            hostname = (ssh.get_prompt().rstrip("#"))
-            print(f"Connected to {hostname}")
+    for cmd in commands:
+        reply = ssh.send_command(cmd)
 
-            reply = ssh.send_command(cmd)
-            print(f"Output for command '{cmd}':\n{reply.result}\n")
+        print(f"Output for command '{cmd}':")
+        print(reply.result)
 
+        parsed = reply.textfsm_parse_output()
 
-            reply = ssh.send_command(cmd)
-            parsed = reply.textfsm_parse_output()
+        if parsed:
+            print("\nParsed output:")
+            for row in parsed:
+                print(row)
+            print(tabulate(parsed, headers="keys", tablefmt="grid"))
 
-            print(reply.result)
-
-            for line in parsed:
-                print(line)
+        print()
