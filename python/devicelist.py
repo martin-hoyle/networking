@@ -1,17 +1,11 @@
 from scrapli import Scrapli
 from getpass import getpass
 
-#username = input("Username: ")
-#password = getpass("Password: ")
+username = input("Username: ")
+password = getpass("Password: ")
 
-with open("../devices/devices.txt", "r") as f:
+with open("devices.txt", "r") as f:
    devices = [line.strip() for line in f if line.strip()]
-
-# devices = [
-#    "192.167.1.197",
-#    "192.167.1.232",
-#    "192.167.1.115"
-# ]
 
 commands = [
     "show version", 
@@ -27,8 +21,8 @@ for host in devices:
     
     device = {
         "host": host,
-        "auth_username": "cisco",
-        "auth_password": "Cisco123",
+        "auth_username": username,
+        "auth_password": password,
         "auth_strict_key": False,
         "platform": "cisco_iosxe",
 }

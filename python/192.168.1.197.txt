@@ -9,7 +9,7 @@ Compiled Thu 19-Dec-24 17:54 by mcpre
 
 ROM: Bootstrap program is Linux
 
-Router-01 uptime is 1 hour, 36 minutes
+Router-01 uptime is 1 hour, 41 minutes
 System returned to ROM by unknown reload cause - suspect boot_data[BOOT_COUNT] 0x9, BOOT_COUNT 0, BOOTDATA 19
 System image file is "unix:/opt/unetlab/addons/iol/bin/x86_64_crb_linux-adventerprisek9-ms"
 Last reload reason: Unknown reason
