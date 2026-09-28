@@ -1,7 +1,4 @@
-from unittest import result
-
 from scrapli import Scrapli
-import textfsm
 from tabulate import tabulate
 
 # with open("devices.txt", "r") as f:
