@@ -1,6 +1,10 @@
 import getpass
 from scrapli import Scrapli
 from tabulate import tabulate
+from datetime import datetime
+import time
+
+start_time = datetime.now()
 
 with open("devices.txt", "r") as f:
    devices = [line.strip() for line in f if line.strip()]
@@ -52,7 +56,7 @@ for host in devices:
                 output += f"{'=' * 60}\n"
                 output += table
                 output += "\n"
-                
+
             else:
                 print(reply.result)
 
@@ -64,5 +68,11 @@ for host in devices:
                 output += "\n"
             # print()
 
-    with open(f"{hostname}.txt", "w") as f:
-        f.write(output)
+
+
+        with open(f"{hostname}.txt", "w") as f:
+            f.write(output)
+
+end_time = (datetime.now() - start_time).total_seconds()
+print(f"Total execution time: {end_time:.2f} seconds")
+
