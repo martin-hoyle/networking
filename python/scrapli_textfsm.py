@@ -1,12 +1,9 @@
 """
 Basic into script to test scrapli with textfsm parsing.  
-This script will connect to a list of devices in devices.txt, 
-run a list of commands, and parse the output using textfsm templates. 
-The output will be saved to a file named after the hostname of the device.
-The script will also print the output to the console in a tabular format using the tabulate library.  
-The script will also print the total execution time of the script.
-
+Devices using csr100v in EVE-NG.
+Connects to devices. runs commands. parse. save to txt. 
 Only tested on commands listed. Next step to test more commands and custom textfsm templates.
+Next Next step. panda and csv.
 """
 
 
