@@ -54,15 +54,15 @@ for host in devices:
         for cmd in commands:
             reply = ssh.send_command(cmd)
 
-                # print(f"Output for command '{cmd}':")
-                # print(reply.result)
+            # print(f"Output for command '{cmd}':")
+            # print(reply.result)
 
             parsed = reply.textfsm_parse_output()
 
             if parsed:
-                    # print("\nParsed output:")
-                    # for row in parsed:
-                    #     print(row)
+                print("\nParsed output:")
+                for row in parsed:
+                    print(row)
                 table = tabulate(parsed, headers="keys", tablefmt="grid")
 
                 print(table)
@@ -86,8 +86,8 @@ for host in devices:
 
 
         #write output to file named after hostname
-        with open(f"{hostname}.txt", "w") as f:
-            f.write(output)
+        # with open(f"{hostname}.txt", "w") as f:
+        #     f.write(output)
 
 #Nice to see. time full script taken.
 end_time = (datetime.now() - start_time).total_seconds()
