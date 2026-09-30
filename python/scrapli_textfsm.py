@@ -11,7 +11,6 @@ import getpass
 from scrapli import Scrapli
 from tabulate import tabulate
 from datetime import datetime
-import time
 
 #get time for execution
 start_time = datetime.now()
