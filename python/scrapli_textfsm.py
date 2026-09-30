@@ -26,7 +26,10 @@ password = getpass.getpass("Enter password: ")
 #umm....duh
 commands = [
     "show cdp neighbors", 
-    "show ip int brief"
+    "show ip int brief",
+    "show ip ospf neighbor",
+    "show version",
+    "show ip route"
 ]
 
 #start loop for each device in devices.txt
