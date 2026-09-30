@@ -13,7 +13,6 @@ password = getpass.getpass("Enter password: ")
 commands = [
     "show cdp neighbors", 
     "show ip int brief"
-
 ]
 
 for host in devices:
@@ -53,7 +52,16 @@ for host in devices:
                 output += f"{'=' * 60}\n"
                 output += table
                 output += "\n"
+                
+            else:
+                print(reply.result)
 
+                output += f"\n{'=' * 60}\n"
+                output += f"Host: {hostname}\n"
+                output += f"Command: {cmd}\n"
+                output += f"{'=' * 60}\n"
+                output += reply.result
+                output += "\n"
             # print()
 
     with open(f"{hostname}.txt", "w") as f:
