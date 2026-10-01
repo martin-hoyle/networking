@@ -1,4 +1,5 @@
 import getpass
+from pprint import pprint
 from scrapli import Scrapli
 import pandas as pd
 from datetime import datetime
@@ -78,6 +79,9 @@ with pd.ExcelWriter("output/network_report.xlsx", engine="openpyxl") as writer:
 
         print(f"Created sheet: {sheet_name}")
 
+
+
+# pprint(command_output)
 # execution time
 end_time = (datetime.now() - start_time).total_seconds()
 print(f"Total execution time: {end_time:.2f} seconds")
