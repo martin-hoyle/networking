@@ -1,0 +1,11 @@
+hostname,interface,ip_address,status,proto
+Router-01,Ethernet0/0,192.168.1.11,up,up
+Router-01,Ethernet0/1,10.0.0.1,up,up
+Router-01,Ethernet0/2,unassigned,up,up
+Router-01,Ethernet0/3,unassigned,up,up
+Router-01,Loopback0,10.255.0.1,up,up
+Router-02,Ethernet0/0,192.168.1.12,up,up
+Router-02,Ethernet0/1,10.0.0.2,up,up
+Router-02,Ethernet0/2,unassigned,administratively down,down
+Router-02,Ethernet0/3,unassigned,administratively down,down
+Router-02,Loopback0,10.255.0.2,up,up

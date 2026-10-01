@@ -86,8 +86,8 @@ for host in devices:
 
 
         #write output to file named after hostname
-        # with open(f"{hostname}.txt", "w") as f:
-        #     f.write(output)
+        with open(f"output/{hostname}.txt", "w") as f:
+            f.write(output)
 
 #Nice to see. time full script taken.
 end_time = (datetime.now() - start_time).total_seconds()
