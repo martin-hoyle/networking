@@ -49,8 +49,8 @@ for host in devices:
 
             # add hostname to each record
             parsed = [
-                {"hostname": hostname, **interface}
-                for interface in parsed
+                {"hostname": hostname, **record}
+                for record in parsed
             ]
 
             # create list for command if it doesn't exist
