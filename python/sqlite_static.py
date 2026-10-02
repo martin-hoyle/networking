@@ -1,21 +1,21 @@
 import sqlite3
 import pandas as pd
 
-conn = sqlite3.connect("database/network_df2.db")
+conn = sqlite3.connect("database/sh_int.db")
 
 cur = conn.cursor()
 
 sh_int = [
-    {'hostname': 'Router-01', 'interface': 'Ethernet0/0', 'ip_address': '192.168.1.101', 'status': 'up', 'proto': 'up'},
+    {'hostname': 'Router-01', 'interface': 'Ethernet0/0', 'ip_address': '192.168.1.11', 'status': 'up', 'proto': 'up'},
     {'hostname': 'Router-01', 'interface': 'Ethernet0/1', 'ip_address': '10.0.0.1', 'status': 'up', 'proto': 'up'},
     {'hostname': 'Router-01', 'interface': 'Ethernet0/2', 'ip_address': 'unassigned', 'status': 'up', 'proto': 'up'},
     {'hostname': 'Router-01', 'interface': 'Ethernet0/3', 'ip_address': 'unassigned', 'status': 'up', 'proto': 'up'},
     {'hostname': 'Router-01', 'interface': 'Loopback0', 'ip_address': '10.255.0.1', 'status': 'up', 'proto': 'up'},
-    {'hostname': 'Router-03', 'interface': 'Ethernet0/0', 'ip_address': '192.168.1.12', 'status': 'up', 'proto': 'up'},
-    {'hostname': 'Router-03', 'interface': 'Ethernet0/1', 'ip_address': '10.0.0.2', 'status': 'up', 'proto': 'up'},
-    {'hostname': 'Router-03', 'interface': 'Ethernet0/2', 'ip_address': 'unassigned', 'status': 'administratively down', 'proto': 'down'},
-    {'hostname': 'Router-03', 'interface': 'Ethernet0/3', 'ip_address': 'unassigned', 'status': 'administratively down', 'proto': 'down'},
-    {'hostname': 'Router-03', 'interface': 'Loopback0', 'ip_address': '10.255.0.2', 'status': 'up', 'proto': 'up'}
+    {'hostname': 'Router-02', 'interface': 'Ethernet0/0', 'ip_address': '192.168.1.12', 'status': 'up', 'proto': 'up'},
+    {'hostname': 'Router-02', 'interface': 'Ethernet0/1', 'ip_address': '10.0.0.2', 'status': 'up', 'proto': 'up'},
+    {'hostname': 'Router-02', 'interface': 'Ethernet0/2', 'ip_address': 'unassigned', 'status': 'administratively down', 'proto': 'down'},
+    {'hostname': 'Router-02', 'interface': 'Ethernet0/3', 'ip_address': 'unassigned', 'status': 'administratively down', 'proto': 'down'},
+    {'hostname': 'Router-02', 'interface': 'Loopback0', 'ip_address': '10.255.0.2', 'status': 'up', 'proto': 'up'}
 ]
 
 df = pd.DataFrame(sh_int)

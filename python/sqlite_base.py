@@ -24,7 +24,7 @@ devices = [
 
 cur.executemany("INSERT INTO devices (hostname, ip_address) VALUES (?, ?)", devices)
 
-# cur.execute("INSERT INTO devices (hostname, ip_address) VALUES (?, ?)", ("router-01", "192.168.1.11"))
+cur.execute("INSERT INTO devices (hostname, ip_address) VALUES (?, ?)", ("router-01", "192.168.1.11"))
 cur.execute("INSERT INTO neighbors (hostname1, hostname2) VALUES (?, ?)", ("router-01", "router-02"))
 
 for row in cur.execute("SELECT * FROM devices"):
