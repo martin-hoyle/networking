@@ -1,5 +1,5 @@
 import getpass
-from pprint import pprint
+import pprint
 from scrapli import Scrapli
 import pandas as pd
 from datetime import datetime
@@ -8,19 +8,22 @@ from datetime import datetime
 start_time = datetime.now()
 
 # open devices file
-with open("devices.txt", "r") as f:
+with open("input/devices.txt", "r") as f:
     devices = [line.strip() for line in f if line.strip()]
+
+with open("input/commands.txt", "r") as f:
+    commands = [line.strip() for line in f if line.strip()]
 
 # get credentials
 username = input("Enter username: ")
 password = getpass.getpass("Enter password: ")
 
 # commands to run
-commands = [
-    "show ip int brief",
-    "show cdp neighbors",
-    "show ip route"
-]
+# commands = [
+#     "show ip int brief",
+#     "show cdp neighbors",
+#     "show ip route"
+# ]
 
 # store output for each command
 command_output = {}

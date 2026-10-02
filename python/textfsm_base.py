@@ -16,21 +16,24 @@ from datetime import datetime
 start_time = datetime.now()
 
 #open box before eating pizza
-with open("devices.txt", "r") as f:
+with open("input/devices.txt", "r") as f:
    devices = [line.strip() for line in f if line.strip()]
+
+with open("input/commands.txt", "r") as f:
+    commands = [line.strip() for line in f if line.strip()]
 
 #get creds
 username = input("Enter username: ")
 password = getpass.getpass("Enter password: ")
 
 #umm....duh
-commands = [
-    "show cdp neighbors", 
-    "show ip int brief",
-    "show ip ospf neighbor",
-    "show version",
-    "show ip route"
-]
+# commands = [
+#     "show cdp neighbors", 
+#     "show ip int brief",
+#     "show ip ospf neighbor",
+#     "show version",
+#     "show ip route"
+# ]
 
 #start loop for each device in devices.txt
 for host in devices:

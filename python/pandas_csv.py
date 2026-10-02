@@ -7,17 +7,20 @@ from datetime import datetime
 start_time = datetime.now()
 
 #open box before eating pizza
-with open("devices.txt", "r") as f:
+with open("input/devices.txt", "r") as f:
    devices = [line.strip() for line in f if line.strip()]
+
+with open("input/commands.txt", "r") as f:
+    commands = [line.strip() for line in f if line.strip()]
 
 #get creds
 username = input("Enter username: ")
 password = getpass.getpass("Enter password: ")
 
 #umm....duh
-commands = [
-    "show ip int brief"
-]
+# commands = [
+#     "show ip int brief"
+# ]
 
 
 all_output = []
