@@ -84,7 +84,7 @@ with pd.ExcelWriter("output/network_report.xlsx", engine="openpyxl") as writer:
 
 
 
-# pprint(command_output)
+print(command_output)
 # execution time
 end_time = (datetime.now() - start_time).total_seconds()
 print(f"Total execution time: {end_time:.2f} seconds")
