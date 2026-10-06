@@ -23,8 +23,8 @@ with open("input/commands.txt", "r") as f:
     commands = [line.strip() for line in f if line.strip()]
 
 #get creds
-username = input("Enter username: ")
-password = getpass.getpass("Enter password: ")
+# username = input("Enter username: ")
+# password = getpass.getpass("Enter password: ")
 
 #umm....duh
 # commands = [
@@ -39,8 +39,8 @@ password = getpass.getpass("Enter password: ")
 for host in devices:
     device = {
         "host": host,
-        "auth_username": username,
-        "auth_password": password,
+        "auth_username": "cisco",
+        "auth_password": "Cisco123",
         "auth_strict_key": False,
         "platform": "cisco_iosxe"
     }
@@ -63,9 +63,9 @@ for host in devices:
             parsed = reply.textfsm_parse_output()
 
             if parsed:
-                print("\nParsed output:")
-                for row in parsed:
-                    print(row)
+                print(f"\nParsed output: {cmd}")
+                # for row in parsed:
+                #     print(row)
                 table = tabulate(parsed, headers="keys", tablefmt="grid")
 
                 print(table)
@@ -77,6 +77,7 @@ for host in devices:
                 output += "\n"
 
             else:
+                print(f"\nOutput for command '{cmd}':")
                 print(reply.result)
 
                 output += f"\n{'=' * 60}\n"

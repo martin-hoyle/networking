@@ -1,1 +1,24 @@
-show ip interface bri
+show version
+show interfaces
+show ip interface
+show ip interface brief
+show ip route
+show ip arp
+show ip bgp
+show ip bgp summary
+show cdp neighbors
+show cdp neighbors detail
+show lldp neighbors
+show lldp neighbors detail
+show vlan
+show vlan brief
+show interfaces status
+show interfaces description
+show mac address-table
+show etherchannel summary
+show spanning-tree
+show inventory
+show processes
+show access-lists
+show users
+show clock
