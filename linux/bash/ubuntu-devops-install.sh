@@ -6,7 +6,14 @@ echo "Gathering user information..."
 echo
 read -p "Enter your Git username: " git_username
 read -p "Enter your Git email: " git_email
+echo
+read -p "Use default Python directory ~/develop/python? [Y/n]: " answer
 
+if [ "$answer" = "Y" ]; then
+    python_dir="$HOME/develop/python"
+else
+    read -p "Enter Python directory: " python_dir
+fi
 
 echo "Generate an ED25519 key"
 
@@ -166,9 +173,12 @@ pipx install ansible
 
 export PATH="$HOME/.local/bin:$PATH"
 
-mkdir -p ~/develop/python
+mkdir -p "$python_dir"
+cd "$python_dir"
 
-cd ~/develop/python
+#mkdir -p ~/develop/python
+
+#cd ~/develop/python
 python3 -m venv .venv
 source .venv/bin/activate
 
