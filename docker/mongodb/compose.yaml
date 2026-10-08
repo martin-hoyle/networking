@@ -3,9 +3,9 @@ services:
     image: mongo:7
     container_name: mongodb
     restart: unless-stopped
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: mongoP@ss123
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: admin
+    #   MONGO_INITDB_ROOT_PASSWORD: mongoP@ss123
     ports:
       - "27017:27017"
     volumes:

@@ -9,3 +9,4 @@ except Exception as e:
     print(f"MongoDB connection failed: {e}")
 finally:
     client.close()
+
