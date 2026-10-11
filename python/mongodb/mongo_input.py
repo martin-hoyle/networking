@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+from tabulate import tabulate
 
 client = MongoClient("mongodb://localhost:27017")
 
@@ -17,6 +18,7 @@ print(f"Inserted: {result.inserted_id}")
 
 found = devices.find_one({"hostname": "test-switch2"})
 
-print(found)
+# Tabulate a single document: one row, fields as columns
+print(tabulate([found], headers="keys", tablefmt="github"))
 
 client.close()
