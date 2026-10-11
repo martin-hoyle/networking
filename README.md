@@ -1,3 +1,4 @@
+# Not unlike password sha - taken with a pinch of salt
 # Networking DevOps Toolkit
 
 A practical collection of Linux setup scripts, Docker configuration, and Python network-automation tools for collecting device output, parsing results, and storing or reporting data.
