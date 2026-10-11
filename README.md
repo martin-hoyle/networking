@@ -47,16 +47,19 @@ A practical collection of Linux setup scripts, Docker configuration, and Python 
 
 ## Prerequisites
 
-- Linux with Bash
-- Python 3.10 or later
-- Docker and Docker Compose for MongoDB
+- Linux 
 - Network reachability and valid credentials for the devices managed by the scripts
 
 ## Installation
 
 ### Linux DevOps tools
 
+Installs "get you started" environment. Inc, python, docker, k8s, terraform vscode. 
+
 Run the installer matching your distribution:
+Tested on 
+RH - Fedora & Alma
+Deb - Ubuntu & Kubuntu
 
 ```bash
 # Ubuntu / Debian
@@ -68,12 +71,7 @@ bash linux/bash/redhat-devops-install.sh
 
 ### Python environment
 
-```bash
-cd python
-python3 -m venv .venv
-source .venv/bin/activate
-pip install scrapli textfsm pandas openpyxl pymongo
-```
+Python is installed with install script. And creates, with prompt, .venv in ~/develop/python
 
 ## MongoDB
 
